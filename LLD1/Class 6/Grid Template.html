@@ -4,105 +4,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grid Template</title>
-
+    <title>Document</title>
     <style>
-        /* remove default styles by User Agent Stylesheet */
+        /* css reset */
         * {
             padding: 0;
             margin: 0;
-        }
-
-        .container {
-            border: 3px solid bisque;
-            width: auto;
-            height: 828px;
-            background-color: tomato;
-
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            grid-template-rows: repeat(8, 1fr);
-        }
-
-        .item {
-            border: 2px solid bisque;
-            padding: 5px;
             box-sizing: border-box;
         }
 
-        .item:nth-of-type(1) {
-            color: antiquewhite;
-            padding: 10px;
-            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-            font-size: large;
 
-            grid-column: span 6;
-            display: flex;
-            justify-content: left;
-            align-items: center;
+
+        /* make sure any oveflowing data is hidden, and body takes all space of the device */
+        html,
+        body {
+            height: 100vh;
+            overflow: hidden;
         }
 
-        .item:nth-of-type(2) {
-            color: antiquewhite;
-            padding: 10px;
-            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-            font-size: large;
 
-            grid-row: 2/-1;           
 
+        body {
+            font-size: 20px;
+            display: grid;
+
+            /* define grid */
+            grid-template-areas:
+                "header header header header"
+                "nav content sidebar1 sidebar2"
+                "nav footer footer footer"
+            ;
+            grid-template-columns: 1fr 4fr 1fr 1fr;
+            grid-template-rows: 70px 1fr 70px;
         }
 
-        .item:nth-of-type(3){
-            color: antiquewhite;
-            padding: 12px;
-            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-            font-size: large;
 
-            grid-column: span 3;
-            grid-row: span 6;
+
+        /* define styling inside semantic tags */
+        header,
+        nav,
+        main,
+        aside,
+        footer {
+            border: 1px solid skyblue;
+            padding: 20px;
+            color: azure;
+            background-color: tomato;
+            color: white;
         }
 
-        .item:nth-of-type(4){
-            color: antiquewhite;
-            padding: 10px;
-            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-            font-size: large;
 
-            grid-row: span 6;
+
+        /* define grid-areas for each sematic tag */
+        header {
+            grid-area: header;
         }
 
-        .item:nth-of-type(5){
-            color: antiquewhite;
-            padding: 10px;
-            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-            font-size: large;
-
-            grid-row: span 6;
+        footer {
+            grid-area: footer;
         }
 
-        .item:nth-of-type(6){
-            color: antiquewhite;
-            padding: 10px;
-            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-            font-size: large;
+        nav {
+            grid-area: nav;
+        }
 
-            grid-column: span 5;
+        main {
+            grid-area: content;
+        }
+
+        .sidebar1 {
+            grid-area: sidebar1;
+        }
+
+        .sidebar2 {
+            grid-area: sidebar2;
         }
     </style>
 </head>
 
 <body>
-
-    <div class="container">
-        <div class="item">Header</div>
-        <div class="item">Navigation</div>
-        <div class="item">Content</div>
-        <div class="item">Sidebar</div>
-        <div class="item">Sidebar</div>
-        <div class="item">Footer</div>
-
-    </div>
-
+    <header>Header</header>
+    <nav>Navigation</nav>
+    <main>Content</main>
+    <aside class="sidebar1">Sidebar</aside>
+    <aside class="sidebar2">Sidebar</aside>
+    <footer>Footer</footer>
 </body>
 
 </html>
