@@ -35,6 +35,9 @@
                 "nav footer footer footer"
             ;
             grid-template-columns: 1fr 4fr 1fr 1fr;
+
+            /* let header and footer take 70px each, the assign all the remaining space to mid row with nav and content. */
+            /* NOTE: you cannot use AUTO instead of 1fr here, auto takes only space that is necessary, but 1fr takes up ALL REMAINING SPACE. */
             grid-template-rows: 70px 1fr 70px;
         }
 
