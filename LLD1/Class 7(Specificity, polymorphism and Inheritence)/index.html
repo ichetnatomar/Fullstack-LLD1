@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-size: 50px;
+            box-sizing: border-box;
+        }
+        html{
+            font-size: 22px;
+        }
+        /* ul li{
+            color: black;
+        } */
+        /* O/P: all Lis will become red */
+
+        ul#fruits li{
+            color: red !important;
+        }
+
+        .favourite{
+            color: yellow;
+        } 
+        ul#fruits li.favourite{
+            color: pink;
+        }
+        ul#fruits li.favourite{
+            color: yellow;
+        }
+        /* out of the above 2, since they bith ahve equal specifity(1,1,2) the recent one will be chosen */
+
+     body{
+            color: blue;
+        } 
+
+        h1{
+            color: red;
+        }
+
+
+        .grandparent{
+            font-size: 16px;
+        }
+        .parent{
+            font-size: 1.5em;
+        }
+
+        .child{
+            font-size: 1.5em;
+        }
+
+        .rem{
+            width: 50vw;
+            /* margin: 1rem; */
+            padding:20rem;
+            box-sizing: border-box;
+            font-size: 2rem;
+            background-color: lightgoldenrodyellow;
+        }
+
+
+        
+    </style>
+</head>
+
+<body>
+    <ul id="fruits">
+        <li>Apple</li>
+        <li class="favourite">Mango</li>
+        <li>Grapes</li>
+    </ul>
+
+    <ul>
+        <li>eat</li>
+        <li>sleep</li>
+        <li>repeat</li>
+    </ul>
+
+    <h1 style="color: unset;">Hello</h1>
+
+    <div class = "grandparent">
+        granparent text
+        <div class = "parent">
+            parent text
+            <div class="child">
+                child text
+            </div>
+        </div>
+    </div>
+    <div class = "rem">rem example</div>
+    </body>
+
+</html>
