@@ -94,6 +94,9 @@
 //   }
 // }
 // console.log(count);
+
+
+//function to check if a given character is an english alphabet or not
 function isAlphabet(char) {
   const regex = /^[A-Za-z]$/;
   return regex.test(char);
@@ -102,14 +105,15 @@ function isAlphabet(char) {
 let str = "a man, a plan, a canal, panama";
 
 let n = str.length;
-let ans = '';
+
 if (n == 0 || n == 1) {
-  ans = 'palin';
+  console.log('palin');
 }
 
 let i = 0;
 let j = n - 1;
 
+//to check if a given string is palidrome or not
 while (j > i) {
   let firstChar = str.charAt(i);
   let lastChar = str.charAt(j);
@@ -117,13 +121,13 @@ while (j > i) {
   if (!isAlphabet(firstChar)) {
     i++;
   }
-  
+
   else if (!isAlphabet(lastChar)) {
     j--;
   }
   else {
     if (lastChar.toLowerCase() !== firstChar.toLowerCase()) {
-      // ans = "not palin";
+
       console.log('not palin');
 
       break;
@@ -135,7 +139,10 @@ while (j > i) {
   }
 }
 
-console.log('palin');
+// console.log('palin');
+
+
+
 
 
 
